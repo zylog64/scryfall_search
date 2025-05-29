@@ -27,7 +27,9 @@ def build_query():
     return query.strip()
 
 def write_to_stdout(cards):
-    for card in cards:
+    for i, card in enumerate(cards):
+        if i != 0 and i % 50 == 0:
+            print("\n\n")
         print(f"1 {card['name']} ({card['set_name']})")
 
 
